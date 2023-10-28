@@ -1,0 +1,33 @@
+server:
+  port: 8881
+spring:
+  application:
+    name: petplanet-pet # 服务名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.220.36.202:8848 # nacos地址
+# 数据库连接池配置
+  datasource:
+    # JDBC配置：
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://124.220.36.202/petplanet
+    username: root
+    password:
+
+    # 连接池配置：
+    druid:
+      initial-size: 2 # 初始化时建立物理连接的个数。默认0
+      max-active: 10 # 最大连接池数量，默认8
+      min-idle: 1 # 最小连接池数量
+      max-wait: 2000 # 获取连接时最大等待时间，单位毫秒。
+      pool-prepared-statements: false # 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+      max-pool-prepared-statement-per-connection-size: -1 # 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。在Druid中，不会存在Oracle下PSCache占用内存过多的问题，可以把这个数值配置大一些，比如说100
+
+#指定mybatis映射文件的地址
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true #开启驼峰与下划线自动转换功能
+
+
