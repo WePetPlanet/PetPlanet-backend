@@ -2,7 +2,7 @@ package top.zynorl.petplanet.user.common.pojo.bo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import top.zynorl.petplanet.user.common.pojo.base.BaseReqPage;
+import top.zynorl.petplanet.common.common.base.BaseReqPage;
 
 /**
  * Created by zynorl on 2023/11/12 14:39

@@ -1,4 +1,4 @@
-package top.zynorl.petplanet.user.common.pojo.base;
+package top.zynorl.petplanet.common.common.base;
 
 import lombok.Data;
 

@@ -1,12 +1,11 @@
 package top.zynorl.petplanet.user.common.converter;
 
 import org.mapstruct.IterableMapping;
-import org.mapstruct.MapMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import top.zynorl.petplanet.user.common.converter.base.BaseConverter;
-import top.zynorl.petplanet.user.common.converter.base.ConverterConfig;
-import top.zynorl.petplanet.user.common.pojo.base.BaseResPage;
+import top.zynorl.petplanet.common.common.base.BaseResPage;
+import top.zynorl.petplanet.common.common.converter.BaseConverter;
+import top.zynorl.petplanet.common.common.converter.ConverterConfig;
 import top.zynorl.petplanet.user.common.pojo.bo.GetUserListReqBO;
 import top.zynorl.petplanet.user.common.pojo.bo.UserInfoBO;
 import top.zynorl.petplanet.user.common.pojo.req.GetUserListReq;

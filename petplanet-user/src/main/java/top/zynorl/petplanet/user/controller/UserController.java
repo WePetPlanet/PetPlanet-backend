@@ -4,8 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import top.zynorl.petplanet.common.common.base.BaseResPage;
+import top.zynorl.petplanet.common.common.base.R;
 import top.zynorl.petplanet.user.common.converter.UserControllerConverter;
-import top.zynorl.petplanet.user.common.pojo.base.BaseResPage;
 import top.zynorl.petplanet.user.common.pojo.bo.GetUserListReqBO;
 import top.zynorl.petplanet.user.common.pojo.bo.UserInfoBO;
 import top.zynorl.petplanet.user.common.pojo.req.GetUserListReq;
@@ -42,6 +43,11 @@ public class UserController {
         getUserListReqBO.setSystem_user_id(null);
 
         BaseResPage<UserInfoBO> userInfoBOBaseResPage = userService.getUserInfoListByKeyword(getUserListReqBO);
+        BaseResPage<UserInfoVO> userInfoVOBaseResPage = userControllerConverter.toUserInfoVOBaseResPage(userInfoBOBaseResPage);
+        R<BaseResPage<UserInfoVO>> R = new R<>();
+        R.setCode(200);
+        R.setMessage("成功");
+        R.setData(userInfoVOBaseResPage);
         return userControllerConverter.toUserInfoVOBaseResPage(userInfoBOBaseResPage);
 
     }
