@@ -2,62 +2,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.15</version>
-        <relativePath />
+        <groupId>top.zynorl.petplanet</groupId>
+        <artifactId>petplanet</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>top.zynorl.petplanet</groupId>
+
     <artifactId>petplanet-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>petplanet-common</name>
     <description>宠物星球-公共模块</description>
+
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
+
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>5.3.29</version>
-            <scope>test</scope>
-        </dependency>
-        <!--MyBatis分页插件-->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>5.3.2</version>
-        </dependency>
-        <!--SpringData工具包-->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-commons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-            </dependency>
-
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.26</version>
-            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

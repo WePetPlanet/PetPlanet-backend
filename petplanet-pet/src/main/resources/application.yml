@@ -11,7 +11,7 @@ spring:
   datasource:
     # JDBC配置：
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://124.220.36.202/petplanet
+    url: jdbc:mysql://124.220.36.202:3306/petplanet
     username: root
     password:
 

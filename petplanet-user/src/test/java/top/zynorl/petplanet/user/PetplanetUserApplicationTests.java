@@ -11,6 +11,7 @@ public class PetplanetUserApplicationTests {
 
     @Test
     public void contextLoads() {
+        System.out.println("890-");
     }
 
 }
