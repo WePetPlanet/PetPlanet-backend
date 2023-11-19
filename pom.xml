@@ -33,9 +33,12 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <skipTests>true</skipTests>
+        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+<!--        //2.1.2.RELEASE-->
+        <spring-cloud-alibaba-dependencies>2.1.0.RELEASE</spring-cloud-alibaba-dependencies>
         <pagehelper-starter.version>1.4.5</pagehelper-starter.version>
         <pagehelper.version>5.3.2</pagehelper.version>
-        <spring-data-commons.version>2.7.5</spring-data-commons.version>
+<!--        <spring-data-commons.version>2.7.5</spring-data-commons.version>-->
         <lombok.version>1.18.10</lombok.version>
         <cn.hutool.version>5.7.14</cn.hutool.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
@@ -46,6 +49,22 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- alibaba-cloud-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!--MyBatis分页插件starter-->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
@@ -59,11 +78,11 @@
                 <version>${pagehelper.version}</version>
             </dependency>
             <!--SpringData工具包-->
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-commons</artifactId>
-                <version>${spring-data-commons.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.data</groupId>-->
+<!--                <artifactId>spring-data-commons</artifactId>-->
+<!--                <version>${spring-data-commons.version}</version>-->
+<!--            </dependency>-->
             <!--对象映射转化工具-->
             <dependency>
                 <groupId>org.mapstruct</groupId>
