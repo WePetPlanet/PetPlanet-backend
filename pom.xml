@@ -45,6 +45,7 @@
         <com.baomido.version>3.5.3.2</com.baomido.version>
         <org.freemarker.version>2.3.28</org.freemarker.version>
         <io.springfox.swagger.version>2.7.0</io.springfox.swagger.version>
+        <com.alibaba.fastjson2>2.0.40</com.alibaba.fastjson2>
     </properties>
 
     <dependencyManagement>
@@ -161,6 +162,18 @@
             <artifactId>pagehelper</artifactId>
             <version>${pagehelper.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>${com.alibaba.fastjson2}</version>
+        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-web &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-web</artifactId>-->
+<!--            <version>6.0.3</version>-->
+<!--        </dependency>-->
+
     </dependencies>
 
     <build>

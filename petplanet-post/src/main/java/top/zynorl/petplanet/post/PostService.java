@@ -1,8 +1,7 @@
 package top.zynorl.petplanet.post;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.*;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -40,10 +39,20 @@ public class PostService {
         return postRepository.findById(id);
     }
 
-    public Page<Post> findPostListByTime(LocalDateTime fromTime, LocalDateTime endTime, Integer page, Integer size){
-        Criteria criteria = new Criteria();
-        Query query = Query.query(criteria);
-        return postRepository.findAll(PageRequest.of(page, size));
+    public Page<Post> findPostListByTime(LocalDateTime fromTime, LocalDateTime endTime, Integer pageNum, Integer pageSize){
+        // 创建查询条件
+        Criteria criteria = Criteria.where("createTime").gte(fromTime).lte(endTime);
+        Query query = new Query(criteria);
+        // 获取总记录数
+        long total = mongoTemplate.count(query, Post.class);
+        // 设置分页信息
+        PageRequest pageRequest = PageRequest.of(pageNum-1, pageSize, Sort.by("createTime"));
+        // 添加分页条件
+        query.with(pageRequest);
+        // 查询结果
+        List<Post> list = mongoTemplate.find(query, Post.class);
+        // 封装成Page对象并返回
+        return new PageImpl<>(list, pageRequest, total);
     }
 
 }

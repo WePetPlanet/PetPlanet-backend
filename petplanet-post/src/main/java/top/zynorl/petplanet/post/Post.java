@@ -31,6 +31,9 @@ public class Post implements Serializable {
     private LocalDateTime lastReviewTime;
     private LocalDateTime startEditTime;
     private LocalDateTime lastEditTime;
+    /**
+     * 创建时间，也即发布时间
+     */
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
     private Integer isDelete;
