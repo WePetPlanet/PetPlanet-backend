@@ -167,13 +167,6 @@
             <artifactId>fastjson2</artifactId>
             <version>${com.alibaba.fastjson2}</version>
         </dependency>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-web &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework</groupId>-->
-<!--            <artifactId>spring-web</artifactId>-->
-<!--            <version>6.0.3</version>-->
-<!--        </dependency>-->
-
     </dependencies>
 
     <build>
