@@ -1,12 +1,12 @@
 package top.zynorl.petplanet.post.Dao;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import top.zynorl.petplanet.post.DO.Post;
+import top.zynorl.petplanet.post.DO.Comment;
 
 /**
  * @version 1.0
  * @Author niuzy
- * @Date 2023/11/19
+ * @Date 2023/11/25
  **/
-public interface PostRepository extends MongoRepository<Post, String> {
+public interface CommentRepository extends MongoRepository<Comment, String> {
 }
