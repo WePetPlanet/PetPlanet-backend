@@ -29,8 +29,44 @@ public class R<T> implements Serializable {
     private String message;
 
     /**
+     * 相关异常
+     */
+    private Throwable throwable;
+
+    /**
      * 响应结果数据
      */
     private T data;
+
+    public static <T> R<T> result(Integer code, String message, T data){
+        R<T> tr = new R<>();
+        tr.setCode(code);
+        tr.setMessage(message);
+        tr.setData(data);
+        return tr;
+    }
+
+    public static <T> R<T> ok(T data){
+        R<T> tr = new R<>();
+        tr.setCode(200);
+        tr.setMessage("success");
+        tr.setData(data);
+        return tr;
+    }
+
+    public static <T> R<T> no(String message){
+        R<T> tr = new R<>();
+        tr.setCode(500);
+        tr.setMessage(message);
+        return tr;
+    }
+    public static <T> R<T> resultDetail(Integer code, String message, Throwable throwable, T data){
+        R<T> tr = new R<>();
+        tr.setCode(code);
+        tr.setMessage(message);
+        tr.setThrowable(throwable);
+        tr.setData(data);
+        return tr;
+    }
 
 }

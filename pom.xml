@@ -24,6 +24,7 @@
         <module>petplanet-pet</module>
         <module>petplanet-post</module>
         <module>petplanet-user</module>
+        <module>petplanet-auth</module>
     </modules>
 
     <properties>
