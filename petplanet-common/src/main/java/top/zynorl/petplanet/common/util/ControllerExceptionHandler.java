@@ -1,4 +1,4 @@
-package top.zynorl.petplanet.common.common.util;
+package top.zynorl.petplanet.common.util;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 

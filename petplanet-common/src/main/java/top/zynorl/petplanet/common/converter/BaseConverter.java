@@ -1,4 +1,4 @@
-package top.zynorl.petplanet.common.common.converter;
+package top.zynorl.petplanet.common.converter;
 
 import cn.hutool.core.date.DateUtil;
 import org.mapstruct.Mapper;

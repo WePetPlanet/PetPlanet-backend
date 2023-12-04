@@ -1,4 +1,4 @@
-package top.zynorl.petplanet.common.common.util;
+package top.zynorl.petplanet.common.util;
 
 /**
  * @version 1.0

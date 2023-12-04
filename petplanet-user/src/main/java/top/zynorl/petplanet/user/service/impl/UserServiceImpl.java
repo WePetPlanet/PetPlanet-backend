@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import top.zynorl.petplanet.common.common.base.BaseResPage;
+import top.zynorl.petplanet.common.base.BaseResPage;
 import top.zynorl.petplanet.user.common.converter.UserServiceConverter;
 import top.zynorl.petplanet.user.common.pojo.bo.GetUserListReqBO;
 import top.zynorl.petplanet.user.common.pojo.bo.UserInfoBO;

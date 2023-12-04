@@ -1,4 +1,4 @@
-package top.zynorl.petplanet.common.common.converter;
+package top.zynorl.petplanet.common.converter;
 
 import org.mapstruct.MapperConfig;
 import org.mapstruct.NullValueCheckStrategy;

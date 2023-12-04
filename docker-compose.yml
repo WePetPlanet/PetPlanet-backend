@@ -1,0 +1,47 @@
+version: '3'
+services:
+  eureka:
+    build:
+      context: .
+      dockerfile: ./eureka/Dockerfile
+    container_name: eureka
+    ports:
+      - "8761:8761"
+    environment:
+      SPRING_PROFILES_ACTIVE: git
+    volumes:
+      - ./eureka/logs:/app/logs
+    restart: always
+  config:
+    build:
+      context: .
+      dockerfile: ./config-server/Dockerfile
+    container_name: config
+    ports:
+      - "8888:8888"
+    environment:
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/{your-username}/{your-config-repo}.git
+      SPRING_PROFILES_ACTIVE: git
+    volumes:
+      - ./config-server/logs:/app/logs
+    depends_on:
+      - eureka
+    restart: always
+  gateway:
+    build:
+      context: .
+      dockerfile: ./gateway/Dockerfile
+    container_name: gateway
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_OPTS: "-Xmx256m -Xms128m"
+      SPRING_CLOUD_CONFIG_URI: http://config:8888/
+      EUREKA_URI: http://eureka:8761/eureka/
+      SPRING_PROFILES_ACTIVE: dev
+    volumes:
+      - ./gateway/logs:/app/logs
+    depends_on:
+      - eureka
+      - config
+    restart: always

@@ -10,7 +10,7 @@ import top.zynorl.petplanet.auth.context.RuntimeContext;
 import top.zynorl.petplanet.auth.context.RuntimeContextHolder;
 import top.zynorl.petplanet.auth.pojo.UserInfoDTO;
 import top.zynorl.petplanet.auth.service.IUserAuthService;
-import top.zynorl.petplanet.common.common.base.R;
+import top.zynorl.petplanet.common.base.R;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

@@ -2,9 +2,9 @@ package top.zynorl.petplanet.user.common.converter;
 
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
-import top.zynorl.petplanet.common.common.base.BaseResPage;
-import top.zynorl.petplanet.common.common.converter.BaseConverter;
-import top.zynorl.petplanet.common.common.converter.ConverterConfig;
+import top.zynorl.petplanet.common.base.BaseResPage;
+import top.zynorl.petplanet.common.converter.BaseConverter;
+import top.zynorl.petplanet.common.converter.ConverterConfig;
 import top.zynorl.petplanet.user.common.pojo.bo.UserInfoBO;
 import top.zynorl.petplanet.user.sqlServer.entity.UserInfoDO;
 

@@ -1,7 +1,7 @@
 package top.zynorl.petplanet.auth.service;
 
 import top.zynorl.petplanet.auth.pojo.UserInfoDTO;
-import top.zynorl.petplanet.common.common.base.R;
+import top.zynorl.petplanet.common.base.R;
 
 /**
  * @version 1.0

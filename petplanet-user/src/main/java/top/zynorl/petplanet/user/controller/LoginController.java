@@ -5,7 +5,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.zynorl.petplanet.common.common.base.R;
+import top.zynorl.petplanet.common.base.R;
 import top.zynorl.petplanet.user.common.pojo.req.LoginUserReq;
 
 import java.time.Duration;
