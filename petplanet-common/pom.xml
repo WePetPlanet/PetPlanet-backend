@@ -11,14 +11,17 @@
 
     <artifactId>petplanet-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>petplanet-common</name>
     <description>宠物星球-公共模块</description>
+
+    <properties>
+        <fastjson.version>1.2.47</fastjson.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.47</version>
+            <version>${fastjson.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

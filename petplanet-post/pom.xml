@@ -15,13 +15,14 @@
     <description>宠物星球-宠物帖子</description>
 
     <properties>
+        <petplanet-common.version>0.0.1-SNAPSHOT</petplanet-common.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>top.zynorl.petplanet</groupId>
             <artifactId>petplanet-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${petplanet-common.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

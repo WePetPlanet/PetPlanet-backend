@@ -3,9 +3,10 @@ FROM maven:3.8.3-openjdk-11
 
 # 创建工作目录
 RUN mkdir -p /app/common
-WORKDIR /app/common
-COPY pom.xml .
-COPY src/ ./src/
+WORKDIR /app
+COPY ../pom.xml ./
+COPY pom.xml ./common/
+COPY src/ ./common/src/
 
 # jar打包
 RUN mvn dependency:go-offline -B
