@@ -1,6 +1,6 @@
 # 设置镜像的元数据信息
-LABEL maintainer = "ZYNORl/niuzy <3445669973@qq.com>"
-LABEL description = "This is a user module image."
+LABEL maintainer="ZYNORl/niuzy <3445669973@qq.com>"
+LABEL description="This is a user module image."
 
 # 构建阶段：使用 Maven 镜像进行构建
 FROM maven:3.8.3-openjdk-11 AS build
