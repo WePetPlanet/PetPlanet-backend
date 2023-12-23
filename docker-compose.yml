@@ -4,10 +4,12 @@ services:
     build:
       context: ./petplanet-common
       dockerfile: Dockerfile
+    image: common-maven-image
   pet:
     build:
       context: ./petplanet-pet
       dockerfile: Dockerfile
+    image: pet-image
     container_name: petplanet-pet
     ports:
       - "8881:8881"
@@ -17,6 +19,7 @@ services:
     build:
       context: ./petplanet-post
       dockerfile: Dockerfile
+    image: post-image
     container_name: petplanet-post
     ports:
       - "8882:8882"
@@ -26,6 +29,7 @@ services:
     build:
       context: ./petplanet-user
       dockerfile: Dockerfile
+    image: user-image
     container_name: petplanet-user
     ports:
       - "8883:8883"
@@ -35,6 +39,7 @@ services:
     build:
       context: ./petplanet-api
       dockerfile: Dockerfile
+    image: api-image
     container_name: petplanet-api
     ports:
       - "8885:8885"
