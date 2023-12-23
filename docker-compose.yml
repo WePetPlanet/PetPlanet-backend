@@ -1,5 +1,9 @@
 version: '3'
 services:
+  common:
+    build:
+      context: ./petplanet-common
+      dockerfile: Dockerfile
   pet:
     build:
       context: ./petplanet-pet
