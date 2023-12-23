@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.petplanet</groupId>
-    <artifactId>common-controller</artifactId>
+    <artifactId>petplanet-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>common-controller</name>
 

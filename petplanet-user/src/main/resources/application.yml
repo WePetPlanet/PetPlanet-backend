@@ -6,9 +6,9 @@ spring:
 
   #redis
   redis:
-    host: localhost
+    host: 124.220.36.202
     port: 6379
-    password: YOUR_REDIS_PASSWORD (如果需要)
+    password: 9Yi2L13Fd6z5p4lx8GwQEfuTKHjN
     database: 0
 
 

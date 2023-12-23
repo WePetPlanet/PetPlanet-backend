@@ -1,47 +1,30 @@
 version: '3'
 services:
-  eureka:
+  pet:
     build:
-      context: .
-      dockerfile: ./eureka/Dockerfile
-    container_name: eureka
+      context: ./petplanet-pet
+      dockerfile: Dockerfile
+    container_name: petplanet-pet
     ports:
-      - "8761:8761"
-    environment:
-      SPRING_PROFILES_ACTIVE: git
-    volumes:
-      - ./eureka/logs:/app/logs
-    restart: always
-  config:
+      - "8881:8881"
+  post:
     build:
-      context: .
-      dockerfile: ./config-server/Dockerfile
-    container_name: config
+      context: ./petplanet-post
+      dockerfile: Dockerfile
+    container_name: petplanet-post
     ports:
-      - "8888:8888"
-    environment:
-      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/{your-username}/{your-config-repo}.git
-      SPRING_PROFILES_ACTIVE: git
-    volumes:
-      - ./config-server/logs:/app/logs
-    depends_on:
-      - eureka
-    restart: always
-  gateway:
+      - "8882:8882"
+  user:
     build:
-      context: .
-      dockerfile: ./gateway/Dockerfile
-    container_name: gateway
+      context: ./petplanet-user
+      dockerfile: Dockerfile
+    container_name: petplanet-user
     ports:
-      - "8080:8080"
-    environment:
-      JAVA_OPTS: "-Xmx256m -Xms128m"
-      SPRING_CLOUD_CONFIG_URI: http://config:8888/
-      EUREKA_URI: http://eureka:8761/eureka/
-      SPRING_PROFILES_ACTIVE: dev
-    volumes:
-      - ./gateway/logs:/app/logs
-    depends_on:
-      - eureka
-      - config
-    restart: always
+      - "8883:8883"
+  api:
+    build:
+      context: ./petplanet-api
+      dockerfile: Dockerfile
+    container_name: petplanet-api
+    ports:
+      - "8885:8885"

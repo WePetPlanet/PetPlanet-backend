@@ -25,7 +25,7 @@
         <module>petplanet-post</module>
         <module>petplanet-user</module>
         <module>petplanet-auth</module>
-        <module>common-controller</module>
+        <module>petplanet-api</module>
     </modules>
 
     <properties>
