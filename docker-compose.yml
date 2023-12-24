@@ -10,25 +10,25 @@ services:
       context: ./petplanet-pet
       dockerfile: Dockerfile
     image: petplanet-pet-image
-    container_name: petplanet-pet-container
-    ports:
-      - "8881:8881"
+#    container_name: petplanet-pet-container
+#    ports:
+#      - "8881:8881"
   post:
     build:
       context: ./petplanet-post
       dockerfile: Dockerfile
     image: petplanet-post-image
-    container_name: petplanet-post-container
-    ports:
-      - "8882:8882"
+#    container_name: petplanet-post-container
+#    ports:
+#      - "8882:8882"
   user:
     build:
       context: ./petplanet-user
       dockerfile: Dockerfile
     image: petplanet-user-image
-    container_name: petplanet-user-container
-    ports:
-      - "8883:8883"
+#    container_name: petplanet-user-container
+#    ports:
+#      - "8883:8883"
 #  api:
 #    build:
 #      context: ./petplanet-api
