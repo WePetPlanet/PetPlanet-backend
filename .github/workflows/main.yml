@@ -21,7 +21,33 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build and Run Docker Images
+
+    - name: Build Docker Images
       run: |
-        docker-compose build
-        docker-compose up -d
+        docker-compose -f docker-compose.yml build
+
+    - name: Install SSH Pass
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y sshpass
+
+    - name: Connect Docker on Ubuntu Server
+      env:
+        SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+        SERVER_IP: ${{ secrets.SSH_HOST }}
+        SSH_USER: ${{ secrets.SSH_USER }}
+      run: |
+        sshpass -p "${SSH_PASSWORD}" ssh -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} "docker version"
+
+
+    - name: Push images to Docker Repository
+      env:
+        SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+        SERVER_IP: ${{ secrets.SSH_HOST }}
+        SSH_USER: ${{ secrets.SSH_USER }}
+      run: |
+        docker rmi petplanet-pet-image:latest petplanet-post-image:latest petplanet-user-image:latest
+        
+        docker save petplanet-pet-image:latest | gzip | sshpass -p "${SSH_PASSWORD}" ssh -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} "gzip -d | docker load"
+        docker save petplanet-post-image:latest | gzip | sshpass -p "${SSH_PASSWORD}" ssh -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} "gzip -d | docker load"
+        docker save petplanet-user-image:latest | gzip | sshpass -p "${SSH_PASSWORD}" ssh -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} "gzip -d | docker load"

@@ -4,12 +4,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: petplanet-parent
+    image: petplanet-parent:latest
   pet:
     build:
       context: ./petplanet-pet
       dockerfile: Dockerfile
-    image: petplanet-pet-image
+    image: petplanet-pet-image:latest
 #    container_name: petplanet-pet-container
 #    ports:
 #      - "8881:8881"
@@ -17,7 +17,7 @@ services:
     build:
       context: ./petplanet-post
       dockerfile: Dockerfile
-    image: petplanet-post-image
+    image: petplanet-post-image:latest
 #    container_name: petplanet-post-container
 #    ports:
 #      - "8882:8882"
@@ -25,7 +25,7 @@ services:
     build:
       context: ./petplanet-user
       dockerfile: Dockerfile
-    image: petplanet-user-image
+    image: petplanet-user-image:latest
 #    container_name: petplanet-user-container
 #    ports:
 #      - "8883:8883"
