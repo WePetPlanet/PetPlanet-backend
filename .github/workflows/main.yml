@@ -46,7 +46,6 @@ jobs:
         SERVER_IP: ${{ secrets.SSH_HOST }}
         SSH_USER: ${{ secrets.SSH_USER }}
       run: |
-        docker rmi petplanet-pet-image:latest petplanet-post-image:latest petplanet-user-image:latest
         
         docker save petplanet-pet-image:latest | gzip | sshpass -p "${SSH_PASSWORD}" ssh -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} "gzip -d | docker load"
         docker save petplanet-post-image:latest | gzip | sshpass -p "${SSH_PASSWORD}" ssh -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} "gzip -d | docker load"
