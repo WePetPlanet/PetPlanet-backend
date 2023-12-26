@@ -40,7 +40,7 @@ jobs:
         sshpass -p "${SSH_PASSWORD}" ssh -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} "docker version"
 
 
-    - name: Push images to Docker Repository
+    - name: Push images to Docker Repository！
       env:
         SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
         SERVER_IP: ${{ secrets.SSH_HOST }}
