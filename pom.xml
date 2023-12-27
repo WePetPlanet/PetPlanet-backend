@@ -52,6 +52,12 @@
 
     <dependencyManagement>
         <dependencies>
+<!--            服务发现-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>0.9.0.RELEASE</version>
+            </dependency>
             <!-- minio文件相关 起始 -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
