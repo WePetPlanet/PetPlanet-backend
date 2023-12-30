@@ -51,7 +51,25 @@
     </properties>
 
     <dependencyManagement>
+
         <dependencies>
+<!--            数据库连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.2.8</version>
+            </dependency>
+            <!--JWT的依赖-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.9.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.79</version>
+            </dependency>
 <!--            服务发现-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

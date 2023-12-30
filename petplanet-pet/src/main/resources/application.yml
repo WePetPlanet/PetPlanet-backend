@@ -12,8 +12,8 @@ spring:
     # JDBC配置：
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://124.220.36.202:3306/petplanet
-    username: root
-    password: h5BZd1SUcrq348INbm7KHp6
+    username: petplanet
+    password: petplanet
 
     # 连接池配置：
     druid:

@@ -10,8 +10,13 @@ import top.zynorl.petplanet.gateway.req.LoginReq;
  */
 @RestController
 public class TestController {
-    @RequestMapping("/test")
-    public Mono<String> test(LoginReq loginReq) {
-        return Mono.just("test");
+    @RequestMapping("/user/normal")
+    public Mono<String> normal(LoginReq loginReq) {
+        return Mono.just("/user/normal");
+    }
+
+    @RequestMapping("/user/admin")
+    public Mono<String> admin(LoginReq loginReq) {
+        return Mono.just("/user/admin");
     }
 }

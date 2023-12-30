@@ -20,7 +20,7 @@ public class JwtUtil {
      */
     private static final String key = "谁能猜到我是中文呢?";
 
-    public static String createToken(Long id, String mobile) {
+    public static String createToken(Long id) {
         DateTime now = DateTime.now();
         DateTime expTime = now.offsetNew(DateField.HOUR, 24);
         Map<String, Object> payload = new HashMap<>();
@@ -32,7 +32,7 @@ public class JwtUtil {
         payload.put(JWTPayload.NOT_BEFORE, now);
         // 内容
         payload.put("id", id);
-        payload.put("mobile", mobile);
+
         String token = JWTUtil.createToken(payload, key.getBytes());
         LOG.info("生成JWT token：{}", token);
         return token;
@@ -57,7 +57,7 @@ public class JwtUtil {
     }
 
     public static void main(String[] args) {
-        createToken(1L, "123");
+        createToken(1L);
 
         String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2NzY4OTk4MjcsIm1vYmlsZSI6IjEyMyIsImlkIjoxLCJleHAiOjE2NzY4OTk4MzcsImlhdCI6MTY3Njg5OTgyN30.JbFfdeNHhxKhAeag63kifw9pgYhnNXISJM5bL6hM8eU";
         validate(token);
