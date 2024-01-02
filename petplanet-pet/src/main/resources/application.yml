@@ -24,10 +24,31 @@ spring:
       pool-prepared-statements: false # 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
       max-pool-prepared-statement-per-connection-size: -1 # 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。在Druid中，不会存在Oracle下PSCache占用内存过多的问题，可以把这个数值配置大一些，比如说100
 
+  # redis
+  # REDIS (RedisProperties)
+  # Redis数据库索引（默认为0）
+  redis:
+    database: 0
+    host: 124.220.36.202
+    port: 6379
+    password: 9Yi2L13Fd6z5p4lx8GwQEfuTKHjN
+    jedis:
+      pool:
+        # 连接池最大连接数（使用负值表示没有限制）
+        max-active: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池中的最小空闲连接
+        min-idle: 0
+        # 连接超时时间（毫秒）
+    timeout: 5000
+
+
 #指定mybatis映射文件的地址
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true #开启驼峰与下划线自动转换功能
-
 
