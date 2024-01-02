@@ -25,10 +25,10 @@ public class AutoGenerateCodeTests {
         String password = "h5BZd1SUcrq348INbm7KHp6";
         FastAutoGenerator.create(url, username, password)
                 .globalConfig(builder -> {
-                    builder.author("zynorl") // 设置作者
+                    builder.author("zynorl/niuzy") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
                             .fileOverride() // 覆盖已生成文件
-                            .outputDir("E:\\学习\\后端学习\\autoGenerateCode\\petplanet"); // 指定输出目录
+                            .outputDir("/Users/zynorl/Desktop/petplanet"); // 指定输出目录
                 })
                 .dataSourceConfig(builder -> builder.typeConvertHandler((globalConfig, typeRegistry, metaInfo) -> {
                     int typeCode = metaInfo.getJdbcType().TYPE_CODE;
@@ -42,7 +42,7 @@ public class AutoGenerateCodeTests {
                 .packageConfig(builder -> {
                     builder.parent("top.zynorl.petplanet") // 设置父包名
                             .moduleName("todo") // 设置父包模块名
-                            .pathInfo(Collections.singletonMap(OutputFile.xml, "E:\\学习\\后端学习\\autoGenerateCode\\petplanet")); // 设置mapperXml生成路径
+                            .pathInfo(Collections.singletonMap(OutputFile.xml, "/Users/zynorl/Desktop/petplanet")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
                     builder.build();
