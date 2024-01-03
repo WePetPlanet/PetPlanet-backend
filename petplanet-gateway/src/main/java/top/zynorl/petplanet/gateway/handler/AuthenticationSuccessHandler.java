@@ -14,23 +14,30 @@ import org.springframework.security.web.server.WebFilterExchange;
 import org.springframework.security.web.server.authentication.WebFilterChainServerAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
+import org.springframework.web.server.WebSession;
 import reactor.core.publisher.Mono;
+import top.zynorl.petplanet.common.security.AuthUser;
 import top.zynorl.petplanet.gateway.config.JwtProperties;
 import top.zynorl.petplanet.gateway.domin.AuthUserDetails;
-import top.zynorl.petplanet.gateway.service.SecurityUserDetailService;
 import top.zynorl.petplanet.gateway.util.JwtTokenUtil;
+import top.zynorl.petplanet.gateway.util.RedisCache;
 import top.zynorl.petplanet.gateway.vo.ResponseResult;
 import top.zynorl.petplanet.gateway.vo.ResultCode;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
+
 @Component
 public class AuthenticationSuccessHandler extends WebFilterChainServerAuthenticationSuccessHandler {
 
     private final JwtProperties jwtProperties;
 
-    public AuthenticationSuccessHandler(JwtProperties jwtProperties) {
+    private final RedisCache redisCache;
+
+    public AuthenticationSuccessHandler(JwtProperties jwtProperties, RedisCache redisCache) {
         this.jwtProperties = jwtProperties;
+        this.redisCache = redisCache;
     }
 
 
@@ -38,6 +45,33 @@ public class AuthenticationSuccessHandler extends WebFilterChainServerAuthentica
     public Mono<Void> onAuthenticationSuccess(WebFilterExchange webFilterExchange, Authentication authentication) {
         ServerWebExchange exchange = webFilterExchange.getExchange();
         ServerHttpResponse response = exchange.getResponse();
+        //将授权信息保存到session
+        UUID uuid = UUID.randomUUID();
+        //将session保存到redis
+//        redisCache.setCacheObject(uuid.toString(), authentication.getPrincipal());
+//        exchange.getAttributes().put("SESSION", uuid.toString());
+//        exchange.getSession().publish(Mono.just(authentication.getPrincipal()));
+        WebSession block = webFilterExchange.getExchange().getSession().block();
+        if(!block.isStarted()) {
+            System.out.println("start web session");
+            block.start();
+        } else {
+            System.out.println("session have started");
+            //开启新的认证  这里不允许再次阻塞，不然会报错
+            block.invalidate();
+        }
+
+        System.out.println(block.getId());
+        //获取个人信息
+        User principal = (User) authentication.getPrincipal();
+        AuthUser authUser = new AuthUser();
+        authUser.setUsername(principal.getUsername());
+        //要把授权信息写入session
+        block.getAttributes().put("authentication", authUser);
+        block.save();
+        System.out.println("授权信息写入session");
+
+
         //设置header
         HttpHeaders headers = response.getHeaders();
         headers.add("Content-Type", "application/json;charset=UTF-8");

@@ -126,6 +126,11 @@
             <artifactId>activation</artifactId>
             <version>1.1.1</version>
         </dependency>
+<!--        spring session-->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
 
 
 

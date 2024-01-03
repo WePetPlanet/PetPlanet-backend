@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
 public class AuthUserDetails implements UserDetails {
+    private Long userid;
     private String username;
     @JsonIgnore
     private String password;
