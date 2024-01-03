@@ -5,10 +5,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import top.zynorl.petplanet.post.DO.Comment;
-import top.zynorl.petplanet.post.DO.Post;
-import top.zynorl.petplanet.post.service.CommentService;
-import top.zynorl.petplanet.post.service.PostService;
+import top.zynorl.petplanet.post.mongoServer.DO.Comment;
+import top.zynorl.petplanet.post.mongoServer.DO.Post;
+import top.zynorl.petplanet.post.mongoServer.service.CommentService;
+import top.zynorl.petplanet.post.mongoServer.service.PostService;
 
 import java.time.LocalDateTime;
 import java.util.List;

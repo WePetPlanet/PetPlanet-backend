@@ -21,8 +21,8 @@ public class AutoGenerateCodeTests {
     @Test
     public void test01(){
         String url = "jdbc:mysql://124.220.36.202:3306/petplanet?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai";
-        String username = "root";
-        String password = "h5BZd1SUcrq348INbm7KHp6";
+        String username = "petplanet";
+        String password = "petplanet";
         FastAutoGenerator.create(url, username, password)
                 .globalConfig(builder -> {
                     builder.author("zynorl/niuzy") // 设置作者
@@ -41,7 +41,7 @@ public class AutoGenerateCodeTests {
                 }))
                 .packageConfig(builder -> {
                     builder.parent("top.zynorl.petplanet") // 设置父包名
-                            .moduleName("todo") // 设置父包模块名
+                            .moduleName("post.sqlServer") // 设置父包模块名
                             .pathInfo(Collections.singletonMap(OutputFile.xml, "/Users/zynorl/Desktop/petplanet")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
