@@ -12,6 +12,7 @@ public class SecurityUserDetailService implements ReactiveUserDetailsService {
 
     @Override
     public Mono<UserDetails> findByUsername(String username) {
+        //这里根据用户名去数据库查账号密码
         UserDetails user = User.withUsername(username).password(new BCryptPasswordEncoder().encode("123456"))
                 .roles("admin", "super").authorities("admin").build();
         return Mono.just(user);

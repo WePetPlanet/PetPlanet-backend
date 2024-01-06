@@ -45,7 +45,7 @@ public class JwtTokenAuthenticationFilter implements WebFilter {
     }
 
     private String resolveToken(ServerHttpRequest request) {
-        String x_token = request.getHeaders().getFirst("X-TOKEN");
+        String x_token = request.getHeaders().getFirst("Authorization");
         if(StringUtils.hasLength(x_token)) {
             return x_token;
         }

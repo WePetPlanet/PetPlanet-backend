@@ -91,6 +91,10 @@ public class AuthenticationSuccessHandler extends WebFilterChainServerAuthentica
             userDetails.setToken(jwtToken);
             result.setData(userDetails);
             dataBytes = mapper.writeValueAsBytes(result);
+            //将SESSION写入redis
+            WebSession block1 = webFilterExchange.getExchange().getSession().block();
+            String id = block1.getId();
+            redisCache.setCacheObject(jwtToken, id);
         }catch (JsonProcessingException e) {
             e.printStackTrace();
             HashMap<String, Object> map = new HashMap<>();
@@ -100,6 +104,8 @@ public class AuthenticationSuccessHandler extends WebFilterChainServerAuthentica
         }
 
         DataBuffer bodyDataBuffer = response.bufferFactory().wrap(dataBytes);
+        //增加跨域允许访问
+        response.getHeaders().set("Access-Control-Allow-Origin","*");
         return response.writeWith(Mono.just(bodyDataBuffer));
     }
     private AuthUserDetails builduser(User user) {
