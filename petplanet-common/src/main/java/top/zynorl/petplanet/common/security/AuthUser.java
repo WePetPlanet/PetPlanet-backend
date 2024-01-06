@@ -7,6 +7,9 @@ import lombok.ToString;
 
 import java.io.Serializable;
 
+/**
+ * 经过认证保存到SESSION的用户信息
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
