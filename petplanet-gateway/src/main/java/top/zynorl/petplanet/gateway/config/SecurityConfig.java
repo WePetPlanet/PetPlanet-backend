@@ -54,20 +54,21 @@ public class SecurityConfig {
                                                       ReactiveAuthenticationManager reactiveAuthenticationManager) throws Exception {
         http.csrf().disable()
                 .httpBasic().disable()
-                .authenticationManager(reactiveAuthenticationManager)
-                .exceptionHandling()
-                .authenticationEntryPoint(customHttpBasicServerAuthenticationEntryPoint) // 自定义authenticationEntryPoint
-                .accessDeniedHandler((swe, e)-> {
-                    swe.getResponse().setStatusCode(HttpStatus.FORBIDDEN);
-                    return swe.getResponse().writeWith(Mono.just(new DefaultDataBufferFactory().wrap("FORBIDDEN".getBytes())));
-                })
-                .and()
                 .securityContextRepository(NoOpServerSecurityContextRepository.getInstance())
                 .authorizeExchange()
                 .pathMatchers(excludedAuthPages).permitAll() //白名单
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()// option请求默认放行
                 .anyExchange()
                 .authenticated()
+                .and()
+                .authenticationManager(reactiveAuthenticationManager)
+
+                .exceptionHandling()
+                .authenticationEntryPoint(customHttpBasicServerAuthenticationEntryPoint) // 自定义authenticationEntryPoint
+                .accessDeniedHandler((swe, e)-> {
+                    swe.getResponse().setStatusCode(HttpStatus.FORBIDDEN);
+                    return swe.getResponse().writeWith(Mono.just(new DefaultDataBufferFactory().wrap("FORBIDDEN".getBytes())));
+                })
                 .and()
                 .formLogin().loginPage("/auth/login")
                 .authenticationSuccessHandler(authenticationSuccessHandler) // authenticationSuccessHandler
