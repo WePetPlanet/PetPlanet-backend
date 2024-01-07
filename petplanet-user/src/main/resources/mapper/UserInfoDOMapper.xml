@@ -11,7 +11,7 @@
         <result column="introduction" property="introduction"/>
         <result column="email" property="email"/>
         <result column="address" property="address"/>
-        <result column="photo" property="photo"/>
+        <result column="url" property="url"/>
         <result column="birthday" property="birthday"/>
         <result column="create_time" property="createTime"/>
         <result column="update_time" property="updateTime"/>
@@ -20,7 +20,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, username, phone_number, password, introduction, email, address, photo, birthday, create_time, update_time, is_delete
+        id, username, phone_number, password, introduction, email, address, url, birthday, create_time, update_time, is_delete
     </sql>
 
     <select id="getUserInfoDOListByKeyword" resultMap="BaseResultMap">
