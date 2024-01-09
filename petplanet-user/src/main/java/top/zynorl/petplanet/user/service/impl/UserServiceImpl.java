@@ -5,12 +5,13 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.zynorl.petplanet.common.base.BaseResPage;
+import top.zynorl.petplanet.sqlServer.entity.UserInfoDO;
+import top.zynorl.petplanet.sqlServer.service.IPetInfoDBService;
+import top.zynorl.petplanet.sqlServer.service.IUserInfoDBService;
 import top.zynorl.petplanet.user.common.converter.UserServiceConverter;
 import top.zynorl.petplanet.user.common.pojo.bo.GetUserListReqBO;
 import top.zynorl.petplanet.user.common.pojo.bo.UserInfoBO;
 import top.zynorl.petplanet.user.service.UserService;
-import top.zynorl.petplanet.user.sqlServer.entity.UserInfoDO;
-import top.zynorl.petplanet.user.sqlServer.service.IUserInfoDBService;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private IUserInfoDBService iUserInfoDBService;
+    private IUserInfoDBService userInfoDBService;
 
     @Autowired
     private UserServiceConverter userServiceConverter;
@@ -30,7 +31,7 @@ public class UserServiceImpl implements UserService {
     public BaseResPage<UserInfoBO> getUserInfoListByKeyword(GetUserListReqBO getUserListReqBO) {
         PageHelper.startPage(getUserListReqBO.getPageNum(), getUserListReqBO.getPageSize());
         //之后进行查询操作将自动进行分页
-        List<UserInfoDO> list = iUserInfoDBService.getUserInfoDOListByKeyword(getUserListReqBO.getKeyword());
+        List<UserInfoDO> list = userInfoDBService.getUserInfoDOListByKeyword(getUserListReqBO.getKeyword());
         //通过构造PageInfo对象获取分页信息，如当前页码，总页数，总条数
         PageInfo<UserInfoDO> pageInfo = new PageInfo<>(list);
         BaseResPage<UserInfoDO> userInfoDOBaseResPage = new BaseResPage<>(pageInfo);

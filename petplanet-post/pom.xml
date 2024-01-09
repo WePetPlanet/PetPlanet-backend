@@ -16,6 +16,8 @@
 
     <properties>
         <petplanet-common.version>0.0.1-SNAPSHOT</petplanet-common.version>
+        <petplanet-sqlServer.version>0.0.1-SNAPSHOT</petplanet-sqlServer.version>
+        <petplanet-mongoServer.version>0.0.1-SNAPSHOT</petplanet-mongoServer.version>
     </properties>
 
     <dependencies>
@@ -23,6 +25,16 @@
             <groupId>top.zynorl.petplanet</groupId>
             <artifactId>petplanet-common</artifactId>
             <version>${petplanet-common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>top.zynorl.petplanet</groupId>
+            <artifactId>petplanet-sqlServer</artifactId>
+            <version>${petplanet-sqlServer.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>top.zynorl.petplanet</groupId>
+            <artifactId>petplanet-mongoServer</artifactId>
+            <version>${petplanet-mongoServer.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

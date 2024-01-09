@@ -11,8 +11,8 @@ spring:
     password: 9Yi2L13Fd6z5p4lx8GwQEfuTKHjN
     database: 0
 
-
-mybatis:
-  mapper-locations:
-    - classpath:mapper/*.xml
-    - classpath*:top/**/mapper/*.xml
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: auto

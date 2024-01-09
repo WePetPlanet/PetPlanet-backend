@@ -8,5 +8,10 @@ import top.zynorl.petplanet.post.common.pojo.bo.req.PublishPostReqBO;
  * @Date 2024/01/03
  **/
 public interface PostService {
+    /**
+     * 发布帖子
+     * @param publishPostReqBO
+     * @return
+     */
     Boolean publishPost(PublishPostReqBO publishPostReqBO);
 }

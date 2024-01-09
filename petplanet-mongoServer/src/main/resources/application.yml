@@ -1,0 +1,6 @@
+server:
+  port: 7002
+spring:
+  data:
+    mongodb:
+      uri: mongodb://124.220.36.202:27017/petplanet

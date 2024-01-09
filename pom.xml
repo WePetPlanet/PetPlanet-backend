@@ -26,6 +26,8 @@
         <module>petplanet-user</module>
         <module>petplanet-auth</module>
         <module>petplanet-api</module>
+        <module>petplanet-sqlServer</module>
+        <module>petplanet-mongoServer</module>
     </modules>
 
     <properties>

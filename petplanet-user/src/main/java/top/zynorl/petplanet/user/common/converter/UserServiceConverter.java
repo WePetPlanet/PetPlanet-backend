@@ -5,8 +5,8 @@ import org.mapstruct.Mapper;
 import top.zynorl.petplanet.common.base.BaseResPage;
 import top.zynorl.petplanet.common.converter.BaseConverter;
 import top.zynorl.petplanet.common.converter.ConverterConfig;
+import top.zynorl.petplanet.sqlServer.entity.UserInfoDO;
 import top.zynorl.petplanet.user.common.pojo.bo.UserInfoBO;
-import top.zynorl.petplanet.user.sqlServer.entity.UserInfoDO;
 
 import java.util.List;
 
