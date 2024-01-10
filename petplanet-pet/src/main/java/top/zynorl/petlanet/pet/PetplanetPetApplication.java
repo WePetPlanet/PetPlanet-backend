@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 @EnableRedisHttpSession
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"top.zynorl.petlanet.pet","top.zynorl.petplanet.common"})
 public class PetplanetPetApplication {
 
     public static void main(String[] args) {

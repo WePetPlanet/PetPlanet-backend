@@ -94,6 +94,7 @@ public class AuthenticationSuccessHandler extends WebFilterChainServerAuthentica
             //将SESSION写入redis
             WebSession block1 = webFilterExchange.getExchange().getSession().block();
             String id = block1.getId();
+            //认证成功后将SESSIONID写入redis，后面请求转发到下游服务时从redis获取SESSIONID
             redisCache.setCacheObject(jwtToken, id);
         }catch (JsonProcessingException e) {
             e.printStackTrace();

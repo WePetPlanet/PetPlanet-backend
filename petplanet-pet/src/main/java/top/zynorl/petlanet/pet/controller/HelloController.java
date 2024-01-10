@@ -3,6 +3,7 @@ package top.zynorl.petlanet.pet.controller;
 import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import top.zynorl.petplanet.common.context.UserAuthContext;
 import top.zynorl.petplanet.common.security.AuthUser;
 
 import javax.servlet.http.Cookie;
@@ -16,7 +17,8 @@ public class HelloController {
     {
 
         try {
-            AuthUser authentication = (AuthUser) session.getAttribute("authentication");
+            AuthUser authentication = UserAuthContext.getAuthUser();
+            //AuthUser authentication = (AuthUser) session.getAttribute("authentication");
             if(authentication == null) {
                 System.out.println("未能正确获取session");
             }
