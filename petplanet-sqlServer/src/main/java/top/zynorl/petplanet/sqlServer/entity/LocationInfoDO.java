@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
 @ApiModel(value = "LocationInfo对象", description = "发布帖子时候的位置信息，从第三方接口中获取")
 @Data
 @Builder
-public class LocationInfoDO implements Serializable {
+public class LocationInfoDO extends BaseTransactionalDO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

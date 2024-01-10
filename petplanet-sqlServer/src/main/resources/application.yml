@@ -6,7 +6,7 @@ spring:
     username: petplanet
     password: petplanet
 
-mybatis:
+mybatis-plus:
   mapper-locations:
     - classpath:mapper/*.xml
     - classpath*:top/**/mapper/*.xml

@@ -22,4 +22,9 @@ public interface IUserInfoDBService extends IService<UserInfoDO> {
      */
     List<UserInfoDO> getUserInfoDOListByKeyword(String keyword);
 
+    /**
+     * 根据username获取用户记录
+     */
+    UserInfoDO getByUsername(String username);
+
 }

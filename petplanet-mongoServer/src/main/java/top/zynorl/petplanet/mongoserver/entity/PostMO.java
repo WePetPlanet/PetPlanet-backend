@@ -39,6 +39,10 @@ public class PostMO implements Serializable {
     private LocalDateTime startEditTime;
     private LocalDateTime lastEditTime;
     /**
+     * 关联的分布式事务Id
+     */
+    private String transactionId;
+    /**
      * 创建时间，也即发布时间
      */
     @CreatedDate

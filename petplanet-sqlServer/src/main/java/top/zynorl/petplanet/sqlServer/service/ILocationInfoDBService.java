@@ -13,4 +13,9 @@ import top.zynorl.petplanet.sqlServer.entity.LocationInfoDO;
  */
 public interface ILocationInfoDBService extends IService<LocationInfoDO> {
 
+    /**
+     * 根据分布式事务ID，删除记录
+     */
+    void deleteByTransactionId(String transactionId);
+
 }

@@ -2,11 +2,11 @@ package top.zynorl.petplanet.user.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.zynorl.petplanet.common.base.BaseResPage;
 import top.zynorl.petplanet.sqlServer.entity.UserInfoDO;
-import top.zynorl.petplanet.sqlServer.service.IPetInfoDBService;
 import top.zynorl.petplanet.sqlServer.service.IUserInfoDBService;
 import top.zynorl.petplanet.user.common.converter.UserServiceConverter;
 import top.zynorl.petplanet.user.common.pojo.bo.GetUserListReqBO;
@@ -19,6 +19,7 @@ import java.util.List;
  * Created by zynorl on 2023/11/10 20:32
  */
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -37,4 +38,5 @@ public class UserServiceImpl implements UserService {
         BaseResPage<UserInfoDO> userInfoDOBaseResPage = new BaseResPage<>(pageInfo);
         return userServiceConverter.toUserInfoBOBaseResPage(userInfoDOBaseResPage);
     }
+
 }

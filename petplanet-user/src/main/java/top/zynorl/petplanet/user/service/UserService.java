@@ -15,4 +15,5 @@ public interface UserService {
      * @return
      */
     BaseResPage<UserInfoBO> getUserInfoListByKeyword(GetUserListReqBO getUserListReqBO);
+
 }

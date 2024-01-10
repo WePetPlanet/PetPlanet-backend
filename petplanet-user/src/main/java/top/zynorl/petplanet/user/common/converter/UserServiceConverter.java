@@ -22,4 +22,5 @@ public interface UserServiceConverter extends BaseConverter {
     List<UserInfoBO> toUserInfoBOList(List<UserInfoDO> userInfoDOList);
 
     BaseResPage<UserInfoBO> toUserInfoBOBaseResPage(BaseResPage<UserInfoDO> userInfoDOBaseResPage);
+
 }

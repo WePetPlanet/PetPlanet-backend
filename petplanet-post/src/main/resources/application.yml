@@ -1,0 +1,25 @@
+
+spring:
+  kafka:
+    bootstrap-servers:  localhost:9092
+    producer:
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: top.zynorl.transaction.fund.payment.serializer.TransactionRecordSerializer
+      properties:
+        linger.ms: 100
+  application:
+    name: petplanet-post
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.220.36.202:8848
+  data:
+    mongodb:
+      uri: mongodb://124.220.36.202:27017/petplanet
+server:
+  port: 8882
+  servlet:
+    context-path: /post

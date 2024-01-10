@@ -50,6 +50,7 @@
         <org.freemarker.version>2.3.28</org.freemarker.version>
         <io.springfox.swagger.version>2.7.0</io.springfox.swagger.version>
         <com.alibaba.fastjson2>2.0.40</com.alibaba.fastjson2>
+        <com.alibab.fastjson>1.2.79</com.alibab.fastjson>
         <org.apache.commons-lang3>3.11</org.apache.commons-lang3>
         <com.squareup.okhttp>3.12.0</com.squareup.okhttp>
         <io.minio>8.2.2</io.minio>
@@ -73,6 +74,11 @@
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
                 <version>${io.jsonwebtoken.jjwt}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${com.alibab.fastjson}</version>
             </dependency>
 <!--            服务发现-->
             <dependency>

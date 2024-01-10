@@ -1,6 +1,7 @@
 package top.zynorl.petplanet.sqlServer.service.impl;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,11 @@ public class UserInfoDBServiceImpl extends ServiceImpl<UserInfoDAO, UserInfoDO> 
     public List<UserInfoDO> getUserInfoDOListByKeyword(String keyword) {
 
         return userInfoDAO.getUserInfoDOListByKeyword(keyword);
+    }
+
+    @Override
+    public UserInfoDO getByUsername(String username) {
+        QueryWrapper<UserInfoDO> queryWrapper = new QueryWrapper<UserInfoDO>().eq("username", username);
+        return getOne(queryWrapper);
     }
 }

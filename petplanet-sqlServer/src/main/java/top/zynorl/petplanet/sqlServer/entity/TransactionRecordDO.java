@@ -13,39 +13,40 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 用户与帖子的关联表
+ * 事务记录表
  * </p>
  *
  * @author zynorl/niuzy
- * @since 2024-01-03
+ * @since 2024-01-05
  */
-@TableName("user_post_relation")
-@ApiModel(value = "UserPostRelation对象", description = "用户与帖子的关联表")
-@Data
+@TableName("transaction_record")
 @Builder
-public class UserPostRelationDO extends BaseTransactionalDO implements Serializable {
+@Data
+@ApiModel(value = "TransactionRecord对象", description = "事务记录表")
+public class TransactionRecordDO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty("自增主键")
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty("用户id")
-    private Long userId;
+    @ApiModelProperty("事务uuid")
+    private String transactionId;
 
-    @ApiModelProperty("帖子id")
-    private Long postId;
+    @ApiModelProperty("此次事务涉及到的交易数据")
+    private String data;
 
-    @ApiModelProperty("关联帖子的mongoDB中的Id")
-    private String postMongoId;
+    @ApiModelProperty("事务状态")
+    private String status;
 
-    @ApiModelProperty("用户发布帖子的时间")
+    @ApiModelProperty("创建时间")
     private LocalDateTime createTime;
 
-    @ApiModelProperty("用户更新帖子的时间")
+    @ApiModelProperty("更新时间")
     private LocalDateTime updateTime;
 
-    @ApiModelProperty("1表示删除，实现逻辑删除")
+    @ApiModelProperty("是否删除")
     private Boolean isDelete;
 
 }

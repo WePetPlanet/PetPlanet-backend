@@ -28,8 +28,9 @@ public class PostMOService {
     private PostMORepository postRepository;
     @Autowired
     private MongoTemplate mongoTemplate;
-    public void savePost(PostMO post){
-        postRepository.save(post);
+    public String savePost(PostMO post){
+        PostMO save = postRepository.save(post);
+        return save.getId();
     }
     public void updatePost(PostMO post){
         postRepository.save(post);
@@ -42,6 +43,11 @@ public class PostMOService {
     }
     public Optional<PostMO> findPostById(String id){
         return postRepository.findById(id);
+    }
+
+    public void deletePostByTransactionId(String transactionId){
+        Query query = new Query(Criteria.where("TransactionId").is(transactionId));
+        mongoTemplate.remove(query, PostMO.class);
     }
 
     public Page<PostMO> findPostListByTime(LocalDateTime fromTime, LocalDateTime endTime, Integer pageNum, Integer pageSize){
