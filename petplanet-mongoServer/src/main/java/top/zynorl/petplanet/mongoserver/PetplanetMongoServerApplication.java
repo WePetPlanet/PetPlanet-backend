@@ -1,0 +1,13 @@
+package top.zynorl.petplanet.mongoserver;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PetplanetMongoServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(PetplanetMongoServerApplication.class, args);
+	}
+
+}
