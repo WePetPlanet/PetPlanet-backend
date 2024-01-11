@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.zynorl.petplanet.post.common.pojo.bo.req.PublishPostReqBO;
+import top.zynorl.petplanet.post.scheduler.PostPublishScheduler;
 import top.zynorl.petplanet.post.service.PostService;
 import top.zynorl.petplanet.post.transaction.PostPublishTransactionalService;
 
@@ -17,11 +18,11 @@ import top.zynorl.petplanet.post.transaction.PostPublishTransactionalService;
 public class PostServiceImpl implements PostService {
 
     @Autowired
-    private PostPublishTransactionalService postPublishTransactionalService;
+    private PostPublishScheduler postPublishScheduler;
 
     @Override
-    public Boolean publishPost(PublishPostReqBO publishPostReqBO) {
-        return postPublishTransactionalService.doProcess(publishPostReqBO);
+    public void publishPost(PublishPostReqBO publishPostReqBO) {
+        postPublishScheduler.schedulePublication(publishPostReqBO);
     }
 
 }

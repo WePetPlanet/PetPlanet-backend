@@ -50,6 +50,10 @@ public class PublishPostReqBO {
      */
     private Boolean isTiming;
     /**
+     * 发布时间
+     */
+    private Long publishTime;
+    /**
      * 首次开始编写帖子的时间
      */
     private LocalDateTime startEditTime;

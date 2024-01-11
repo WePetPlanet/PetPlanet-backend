@@ -13,5 +13,5 @@ public interface PostService {
      * @param publishPostReqBO
      * @return
      */
-    Boolean publishPost(PublishPostReqBO publishPostReqBO);
+    void publishPost(PublishPostReqBO publishPostReqBO);
 }
