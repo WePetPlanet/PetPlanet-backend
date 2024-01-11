@@ -11,6 +11,8 @@ import top.zynorl.petplanet.sqlServer.service.IUserInfoDBService;
 import top.zynorl.petplanet.user.common.pojo.req.RegisterReq;
 import top.zynorl.petplanet.user.service.UserService;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/user")
 public class RegisterController {
@@ -19,7 +21,7 @@ public class RegisterController {
 
 
     @PostMapping("/register")
-    public Resp<Object> register(@RequestBody RegisterReq registerReq) {
+    public Resp<Object> register(@Valid  @RequestBody RegisterReq registerReq) {
         UserInfoDO userInfoDO = new UserInfoDO();
         userInfoDO.setUsername(registerReq.getUsername());
         userInfoDO.setPassword(registerReq.getPassword());
