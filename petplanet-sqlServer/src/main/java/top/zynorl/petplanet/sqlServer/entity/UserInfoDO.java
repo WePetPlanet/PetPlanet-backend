@@ -5,8 +5,10 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -23,6 +25,8 @@ import java.time.LocalDateTime;
 @ApiModel(value = "UserInfo对象", description = "用户信息表")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserInfoDO implements Serializable {
 
     private static final long serialVersionUID = 1L;

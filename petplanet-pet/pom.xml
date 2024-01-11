@@ -18,6 +18,12 @@
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
     <dependencies>
+
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version></version>
+        </dependency>
 <!--        lombok 自动代码生成-->
         <dependency>
             <groupId>org.projectlombok</groupId>

@@ -1,5 +1,6 @@
 package top.zynorl.petplanet.user.service;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import top.zynorl.petplanet.common.base.BaseResPage;
 import top.zynorl.petplanet.user.common.pojo.bo.GetUserListReqBO;
 import top.zynorl.petplanet.user.common.pojo.bo.UserInfoBO;

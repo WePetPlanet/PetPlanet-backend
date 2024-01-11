@@ -94,6 +94,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!--        &lt;!&ndash;        服务发现&ndash;&gt;-->
 <!--        <dependency>-->

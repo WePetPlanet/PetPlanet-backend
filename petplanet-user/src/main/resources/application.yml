@@ -5,7 +5,7 @@ spring:
     password: petplanet
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: 121.43.116.232:9092
     consumer:
       group-id: mq-transaction-test
       auto-offset-reset: earliest
