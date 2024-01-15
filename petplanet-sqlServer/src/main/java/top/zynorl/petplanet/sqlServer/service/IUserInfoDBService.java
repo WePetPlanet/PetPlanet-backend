@@ -3,6 +3,7 @@ package top.zynorl.petplanet.sqlServer.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.stereotype.Service;
+import top.zynorl.petplanet.sqlServer.datasource.annotation.DataSourceSwitch;
 import top.zynorl.petplanet.sqlServer.entity.UserInfoDO;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
  * @author zynorl/niuzy
  * @since 2024-01-02
  */
+@DataSourceSwitch(value = "userDataSource")
 public interface IUserInfoDBService extends IService<UserInfoDO> {
 
     /**

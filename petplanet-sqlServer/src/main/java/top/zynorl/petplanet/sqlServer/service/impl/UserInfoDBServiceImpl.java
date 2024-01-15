@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.zynorl.petplanet.sqlServer.dao.UserInfoDAO;
+import top.zynorl.petplanet.sqlServer.datasource.annotation.DataSourceSwitch;
 import top.zynorl.petplanet.sqlServer.entity.UserInfoDO;
 import top.zynorl.petplanet.sqlServer.service.IUserInfoDBService;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * @since 2024-01-02
  */
 @Service
+@DataSourceSwitch(value = "userDataSource")
 public class UserInfoDBServiceImpl extends ServiceImpl<UserInfoDAO, UserInfoDO> implements IUserInfoDBService {
     @Autowired
     private UserInfoDAO userInfoDAO;

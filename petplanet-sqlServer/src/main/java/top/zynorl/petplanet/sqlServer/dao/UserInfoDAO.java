@@ -4,6 +4,7 @@ package top.zynorl.petplanet.sqlServer.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import top.zynorl.petplanet.sqlServer.datasource.annotation.DataSourceSwitch;
 import top.zynorl.petplanet.sqlServer.entity.UserInfoDO;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
  * @since 2024-01-02
  */
 @Mapper
+@DataSourceSwitch(value = "userDataSource")
 public interface UserInfoDAO extends BaseMapper<UserInfoDO> {
 
     /**
