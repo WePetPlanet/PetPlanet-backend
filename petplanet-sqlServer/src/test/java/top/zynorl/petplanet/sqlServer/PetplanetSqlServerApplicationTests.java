@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import top.zynorl.petplanet.sqlServer.entity.UserInfoDO;
 import top.zynorl.petplanet.sqlServer.service.IUserInfoDBService;
-import top.zynorl.petplanet.sqlServer.service.impl.UserInfoDBServiceImpl;
 
 import java.util.List;
 
@@ -16,19 +15,19 @@ import java.util.List;
 public class PetplanetSqlServerApplicationTests {
 
     @Autowired
-    private UserInfoDBServiceImpl userInfoDBService;
+    private IUserInfoDBService userInfoDBService;
 
     @Test
     public void contextLoads() {
     }
     @Test
     public void testDynamicDataSource(){
-        List<UserInfoDO> hhh = userInfoDBService.getUserInfoDOListByKeyword("hhh");
-        if(hhh==null){
-            System.out.println("8888888888888888");
+        List<UserInfoDO> userInfoDOS = userInfoDBService.getUserInfoDOListByKeyword("zynorl");
+        if(userInfoDOS==null || userInfoDOS.isEmpty()){
+            System.out.println("没有查询到信息");
         }else {
-            hhh.forEach(userInfoDO ->
-                    System.out.printf(userInfoDO.getUsername())
+            userInfoDOS.forEach(userInfoDO ->
+                    System.out.println(userInfoDO.getUsername())
             );
         }
     }

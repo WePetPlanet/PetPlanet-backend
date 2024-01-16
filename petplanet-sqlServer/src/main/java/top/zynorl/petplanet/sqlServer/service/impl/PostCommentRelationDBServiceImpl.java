@@ -4,6 +4,7 @@ package top.zynorl.petplanet.sqlServer.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import top.zynorl.petplanet.sqlServer.dao.PostCommentRelationDAO;
+import top.zynorl.petplanet.sqlServer.datasource.annotation.DataSourceSwitch;
 import top.zynorl.petplanet.sqlServer.entity.PostCommentRelationDO;
 import top.zynorl.petplanet.sqlServer.service.IPostCommentRelationDBService;
 
@@ -16,6 +17,7 @@ import top.zynorl.petplanet.sqlServer.service.IPostCommentRelationDBService;
  * @since 2024-01-02
  */
 @Service
+@DataSourceSwitch(value = "postDataSource")
 public class PostCommentRelationDBServiceImpl extends ServiceImpl<PostCommentRelationDAO, PostCommentRelationDO> implements IPostCommentRelationDBService {
 
 }

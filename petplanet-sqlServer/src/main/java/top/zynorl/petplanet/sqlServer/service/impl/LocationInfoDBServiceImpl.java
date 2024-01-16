@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import top.zynorl.petplanet.sqlServer.dao.LocationInfoDAO;
+import top.zynorl.petplanet.sqlServer.datasource.annotation.DataSourceSwitch;
 import top.zynorl.petplanet.sqlServer.entity.LocationInfoDO;
 import top.zynorl.petplanet.sqlServer.service.ILocationInfoDBService;
 
@@ -17,6 +18,7 @@ import top.zynorl.petplanet.sqlServer.service.ILocationInfoDBService;
  * @since 2024-01-02
  */
 @Service
+@DataSourceSwitch(value = "postDataSource")
 public class LocationInfoDBServiceImpl extends ServiceImpl<LocationInfoDAO, LocationInfoDO> implements ILocationInfoDBService {
     @Override
     public void deleteByTransactionId(String transactionId) {

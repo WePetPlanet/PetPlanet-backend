@@ -16,12 +16,12 @@ import java.util.List;
  * @author zynorl/niuzy
  * @since 2024-01-02
  */
-@DataSourceSwitch(value = "userDataSource")
 public interface IUserInfoDBService extends IService<UserInfoDO> {
 
     /**
      * 根据keyword模糊查询用户名，得到用户信息列表
      */
+    @DataSourceSwitch(value = "userDataSource")
     List<UserInfoDO> getUserInfoDOListByKeyword(String keyword);
 
     /**

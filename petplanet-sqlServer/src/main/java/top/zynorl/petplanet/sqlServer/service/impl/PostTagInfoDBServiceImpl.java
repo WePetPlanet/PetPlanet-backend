@@ -4,6 +4,7 @@ package top.zynorl.petplanet.sqlServer.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import top.zynorl.petplanet.sqlServer.dao.PostTagInfoDAO;
+import top.zynorl.petplanet.sqlServer.datasource.annotation.DataSourceSwitch;
 import top.zynorl.petplanet.sqlServer.entity.PostTagInfoDO;
 import top.zynorl.petplanet.sqlServer.service.IPostTagInfoDBService;
 
@@ -16,6 +17,7 @@ import top.zynorl.petplanet.sqlServer.service.IPostTagInfoDBService;
  * @since 2024-01-02
  */
 @Service
+@DataSourceSwitch(value = "postDataSource")
 public class PostTagInfoDBServiceImpl extends ServiceImpl<PostTagInfoDAO, PostTagInfoDO> implements IPostTagInfoDBService {
 
 }

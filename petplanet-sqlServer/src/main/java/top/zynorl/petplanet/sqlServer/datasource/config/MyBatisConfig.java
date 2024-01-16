@@ -18,6 +18,8 @@ import javax.sql.DataSource;
 public class MyBatisConfig {
     @Autowired
     private DataSource dynamicRoutingDataSource;
+
+
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();

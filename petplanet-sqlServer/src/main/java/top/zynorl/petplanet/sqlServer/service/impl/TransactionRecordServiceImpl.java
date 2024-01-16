@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import top.zynorl.petplanet.sqlServer.dao.TransactionRecordDAO;
+import top.zynorl.petplanet.sqlServer.datasource.annotation.DataSourceSwitch;
 import top.zynorl.petplanet.sqlServer.entity.TransactionRecordDO;
 import top.zynorl.petplanet.sqlServer.service.ITransactionRecordService;
 
@@ -16,6 +17,7 @@ import top.zynorl.petplanet.sqlServer.service.ITransactionRecordService;
  * @since 2024-01-05
  */
 @Service
+@DataSourceSwitch(value = "postDataSource")
 public class TransactionRecordServiceImpl extends ServiceImpl<TransactionRecordDAO, TransactionRecordDO> implements ITransactionRecordService {
     @Override
     public void deleteByTransactionId(String transactionId) {

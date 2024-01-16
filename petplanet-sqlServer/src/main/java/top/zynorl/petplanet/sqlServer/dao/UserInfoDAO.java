@@ -18,7 +18,6 @@ import java.util.List;
  * @since 2024-01-02
  */
 @Mapper
-@DataSourceSwitch(value = "userDataSource")
 public interface UserInfoDAO extends BaseMapper<UserInfoDO> {
 
     /**

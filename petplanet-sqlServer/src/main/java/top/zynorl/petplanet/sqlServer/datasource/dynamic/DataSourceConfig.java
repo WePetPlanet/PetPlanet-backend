@@ -23,13 +23,20 @@ public class DataSourceConfig {
         return DataSourceBuilder.create().build();
     }
     @Bean(name = "userDataSource")
+    @ConfigurationProperties(prefix = "spring.datasource.db1")
     public DataSource userDataSource() {
-        return DataSourceBuilder.create().url("jdbc:mysql://124.220.36.202:3306/petplanet-user").username("petplanet").password("petplanet").build();
+        return DataSourceBuilder.create().build();
     }
 
     @Bean(name = "postDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.db2")
     public DataSource postDataSource() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean(name = "petDataSource")
+    @ConfigurationProperties(prefix = "spring.datasource.db3")
+    public DataSource petDataSource() {
         return DataSourceBuilder.create().build();
     }
 
@@ -45,6 +52,7 @@ public class DataSourceConfig {
         Map<Object, Object> targetDataSources = new HashMap<>();
         targetDataSources.put("userDataSource", userDataSource());
         targetDataSources.put("postDataSource", postDataSource());
+        targetDataSources.put("petDataSource", postDataSource());
         dataSource.setTargetDataSources(targetDataSources);
         dataSource.setDefaultTargetDataSource(defaultDataSource());
         return dataSource;
