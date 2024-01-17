@@ -1,6 +1,6 @@
 package top.zynorl.petplanet.user.service;
 
-import top.zynorl.petplanet.user.common.pojo.dto.PublishPostDTO;
+import top.zynorl.petplanet.user.common.pojo.dto.PublishPostTransactionDTO;
 
 /**
  * @version 1.0
@@ -11,8 +11,7 @@ public interface UserPostRelationService {
 
     /**
      * 保存帖子时，附带的user信息
-     * @param transactionId
      * @param publishPostDTO
      */
-    void saveFromPostPublish(String transactionId, PublishPostDTO publishPostDTO);
+    void saveFromPostPublish(PublishPostTransactionDTO publishPostDTO);
 }

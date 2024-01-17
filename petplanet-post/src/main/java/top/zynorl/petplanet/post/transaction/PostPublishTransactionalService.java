@@ -5,6 +5,7 @@ import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import top.zynorl.petplanet.common.enums.TransactionStatusEnum;
 import top.zynorl.petplanet.mongoserver.entity.PostMO;
 import top.zynorl.petplanet.mongoserver.service.PostMOService;

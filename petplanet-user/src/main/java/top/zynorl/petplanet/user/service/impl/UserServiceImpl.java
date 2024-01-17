@@ -6,12 +6,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.zynorl.petplanet.common.base.BaseResPage;
-import top.zynorl.petplanet.sqlServer.entity.UserInfoDO;
-import top.zynorl.petplanet.sqlServer.service.IUserInfoDBService;
 import top.zynorl.petplanet.user.common.converter.UserServiceConverter;
 import top.zynorl.petplanet.user.common.pojo.bo.GetUserListReqBO;
 import top.zynorl.petplanet.user.common.pojo.bo.UserInfoBO;
 import top.zynorl.petplanet.user.service.UserService;
+import top.zynorl.petplanet.user.sqlServer.entity.UserInfoDO;
+import top.zynorl.petplanet.user.sqlServer.service.IUserInfoDBService;
 
 import java.util.List;
 

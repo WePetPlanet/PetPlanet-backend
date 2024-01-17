@@ -30,11 +30,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>top.zynorl.petplanet</groupId>
-            <artifactId>petplanet-sqlServer</artifactId>
-            <version>${petplanet-sqlServer.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>

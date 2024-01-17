@@ -1,4 +1,4 @@
-package top.zynorl.petplanet.user.config;
+package top.zynorl.petplanet.post.config;
 
 /**
  * @version 1.0

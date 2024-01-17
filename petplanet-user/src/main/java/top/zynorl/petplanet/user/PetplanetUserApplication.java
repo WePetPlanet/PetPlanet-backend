@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"top.zynorl.petplanet.user","top.zynorl.petplanet.sqlServer","top.zynorl.petplanet.common"})
+@ComponentScan({"top.zynorl.petplanet.user","top.zynorl.petplanet.common"})
 public class PetplanetUserApplication {
 
     public static void main(String[] args) {
