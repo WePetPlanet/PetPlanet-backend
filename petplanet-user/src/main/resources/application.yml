@@ -6,6 +6,14 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   kafka:
     bootstrap-servers: 121.43.116.232:9092
+    producer:
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        linger.ms: 100
     consumer:
       group-id: mq-transaction-test
       auto-offset-reset: earliest

@@ -1,8 +1,0 @@
-server:
-  port: 7001
-
-mybatis-plus:
-  mapper-locations: classpath:/mapper/*Mapper.xml
-  global-config:
-    db-config:
-      id-type: auto

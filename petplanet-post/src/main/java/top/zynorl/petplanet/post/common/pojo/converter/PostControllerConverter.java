@@ -17,5 +17,4 @@ public interface PostControllerConverter extends BaseConverter {
     @Mapping(target = "startEditTime", source = "startEditTime", qualifiedByName = "toLocalDataTime")
     PublishPostReqBO toPublishPostReqBO(PublishPostReq publishPostReq);
 
-    PublishPostReqBO toPublishPostReqBO1(PublishPostReq publishPostReq);
 }

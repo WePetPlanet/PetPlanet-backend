@@ -1,6 +1,9 @@
-package top.zynorl.petplanet.user.common.pojo.dto;
+package top.zynorl.petplanet.post.common.pojo.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -10,6 +13,8 @@ import java.io.Serializable;
  * @Date 2024/01/10
  **/
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PublishPostTransactionDTO extends BaseTransactionDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 

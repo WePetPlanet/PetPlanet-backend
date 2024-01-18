@@ -5,8 +5,7 @@ import top.zynorl.petplanet.common.converter.BaseConverter;
 import top.zynorl.petplanet.common.converter.ConverterConfig;
 import top.zynorl.petplanet.mongoserver.entity.PostMO;
 import top.zynorl.petplanet.post.common.pojo.bo.req.PublishPostReqBO;
-import top.zynorl.petplanet.post.common.pojo.dto.PublishPostDTO;
-import top.zynorl.petplanet.sqlServer.entity.LocationInfoDO;
+import top.zynorl.petplanet.post.sqlServer.entity.LocationInfoDO;
 
 /**
  * @version 1.0

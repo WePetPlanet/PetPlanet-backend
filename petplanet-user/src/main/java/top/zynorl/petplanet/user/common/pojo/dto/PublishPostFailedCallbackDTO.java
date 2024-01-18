@@ -5,19 +5,11 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @version 1.0
- * @Author niuzy
- * @Date 2024/01/10
- **/
+ * Created by zynorl on 2024/1/18 16:14
+ */
 @Data
-public class PublishPostTransactionDTO extends BaseTransactionDTO implements Serializable {
+public class PublishPostFailedCallbackDTO implements Serializable {
     private static final long serialVersionUID = 1L;
-
-    /**
-     * 关联用户id
-     */
-    private Long userId;
-
     /**
      * 帖子id
      */

@@ -1,4 +1,9 @@
 spring:
+  datasource:
+    username: petplanet
+    password: petplanet
+    url: jdbc:mysql://124.220.36.202:3306/petplanet-user?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
   kafka:
     bootstrap-servers:  localhost:9092
     producer:
@@ -6,9 +11,17 @@ spring:
       batch-size: 16384
       buffer-memory: 33554432
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: top.zynorl.transaction.fund.payment.serializer.TransactionRecordSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringDeserializer
       properties:
         linger.ms: 100
+    consumer:
+      group-id: mq-transaction-test
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      auto-commit-interval: 1000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
   application:
     name: petplanet-post
   cloud:
@@ -22,3 +35,9 @@ server:
   port: 8882
   servlet:
     context-path: /post
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: auto

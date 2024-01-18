@@ -28,11 +28,6 @@
         </dependency>
         <dependency>
             <groupId>top.zynorl.petplanet</groupId>
-            <artifactId>petplanet-sqlServer</artifactId>
-            <version>${petplanet-sqlServer.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>top.zynorl.petplanet</groupId>
             <artifactId>petplanet-mongoServer</artifactId>
             <version>${petplanet-mongoServer.version}</version>
         </dependency>
@@ -55,10 +50,18 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-
+        <!--Mysql数据库驱动-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <!--        服务发现-->
         <dependency>
@@ -104,7 +107,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>top.zynorl.petplanet.user.PetplanetUserApplication</mainClass>
+                    <mainClass>top.zynorl.petplanet.post.PetplanetPostApplication</mainClass>
                     <goal>repackage</goal>
                 </configuration>
             </plugin>
